@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Web App</title>
+    <style>
+        /* Add your CSS styles here */
+        .clickable-tile {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menu-tile" class="clickable-tile" onclick="redirectToCategory('Menu')">
+        <h2>Menu</h2>
+    </div>
+
+    <div id="specials-tile" class="clickable-tile" onclick="redirectToRandomCategory()">
+        <h2>Specials</h2>
+    </div>
+
+    <div id="map-tile" class="clickable-tile" onclick="redirectToCategory('Map')">
+        <h2>Map</h2>
+    </div>
+
+    <script>
+        // Mock data for menu categories
+        var menuCategories = ["Lunch", "Dinner", "Sushi", "Beverages", "Desserts"];
+
+        // Function to redirect to a specific category
+        function redirectToCategory(category) {
+            window.location.href = "/menu/category/" + category.toLowerCase();
+        }
+
+        // Function to redirect to a random category
+        function redirectToRandomCategory() {
+            var randomCategory = menuCategories[Math.floor(Math.random() * menuCategories.length)];
+            window.location.href = "/menu/category/" + randomCategory.toLowerCase();
+        }
+    </script>
+
+</body>
+</html>
 
